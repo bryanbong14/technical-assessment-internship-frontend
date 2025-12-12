@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow p-4 mb-4">
+      <h4 class="card-title mb-4 text-center">Contact Us</h4>
+
+      <!-- Contact Form -->
+      <form [formGroup]="contactForm" (ngSubmit)="submit()">
+
+        <!-- Name -->
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="name" formControlName="name" placeholder="Your Name">
+          <label for="name">Name</label>
+          <small class="text-danger" *ngIf="f.name.touched && f.name.invalid">
+            <span *ngIf="f.name.errors?.['required']">Name is required.</span>
+            <span *ngIf="f.name.errors?.['minlength']">Minimum 2 characters required.</span>
+          </small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com">
+          <label for="email">Email</label>
+          <small class="text-danger" *ngIf="f.email.touched && f.email.invalid">
+            <span *ngIf="f.email.errors?.['required']">Email is required.</span>
+            <span *ngIf="f.email.errors?.['email']">Enter a valid email.</span>
+          </small>
+        </div>
+
+        <!-- Message -->
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="message" formControlName="message"
+                    style="height:120px" placeholder="Your message"></textarea>
+          <label for="message">Message</label>
+          <small class="text-danger" *ngIf="f.message.touched && f.message.invalid">
+            <span *ngIf="f.message.errors?.['required']">Message is required.</span>
+            <span *ngIf="f.message.errors?.['minlength']">Minimum 10 characters required.</span>
+          </small>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid || loading">
+            {{ loading ? "Sending..." : "Submit" }}
+          </button>
+        </div>
+      </form>
+
+      <!-- Success Alert -->
+      <div *ngIf="responseData?.success" class="alert alert-success mt-4">
+        <strong>Message Sent!</strong><br>
+        We received your message from <b>{{ responseData.received.name }}</b>.<br>
+        Email: {{ responseData.received.email }}<br>
+        Priority: {{ responseData.received.priority }}
+      </div>
+
+      <!-- Error Alert -->
+      <div *ngIf="responseData?.error" class="alert alert-danger mt-4">
+        <strong>Error:</strong> Something went wrong. Please try again.
+      </div>
+    </div>
+  </div>
+</div>

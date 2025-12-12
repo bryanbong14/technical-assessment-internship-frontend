@@ -1,45 +1,59 @@
-# technical-assessment-internship-frontend
+# Task5Angular
 
-This is a frontend assessment to test your Bootstrap skills and Git usage. The project contains a basic HTML skeleton using Bootstrap.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
 
-## 🚀 Your Tasks
+## Development server
 
-### ✅ Task 1: Create a Responsive Navigation Bar
-- Add a Bootstrap navbar at the top of the page.
-- It should collapse into a hamburger menu on smaller screens.
-- Use the Bootstrap classes only (no custom CSS).
-- Add links like: Home, About, Contact.
+To start a local development server, run:
 
-### ✅ Task 2: Build a Responsive Card Grid
-- Below the navbar, create a section with 3 cards in a responsive grid.
-- Each card should have an image, title, description, and a button.
-- Use Bootstrap’s grid system (e.g., `col-md-4`) and `card` components.
+```bash
+ng serve
+```
 
-### ✅ Task 3: Add a Contact Form
-- At the bottom of the page, add a contact form with:
-  - Name, Email, Message fields
-  - A submit button
-- Use Bootstrap’s form components (e.g., `form-floating`, `form-control`)
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-### ✅ Task 4: Add a Modal
-- Create a modal that shows the Name, Email, Message fields after the user clicks on the submit button
+## Code scaffolding
 
-### ✅ Task 5 (Optional): Add an Angular application
-- Create a Single Page Application (SPA) with Angular that contains a form, validator and business logic. Include an example that makes HTTP calls.
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-## 🧪 Submission Instructions
+```bash
+ng generate component component-name
+```
 
-1. Fork/Clone this repository.
-2. Complete the tasks above.
-3. Commit each task **in a separate commit**:
-   - Commit 1: Add Navbar
-   - Commit 2: Add Card Grid
-   - Commit 3: Add Contact Form
-   - Commit 4: Add modal
-   - Commit 5: Add Angular application
-4. Submit your GitHub repository link in a PDF document through the link provided in the email.
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-Bonus: Use Bootstrap utilities to improve spacing and layout (e.g., `mt-4`, `p-3`, `text-center`).
+```bash
+ng generate --help
+```
 
-Good luck!
+## Building
 
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

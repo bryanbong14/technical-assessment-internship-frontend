@@ -1,0 +1,40 @@
+<div class="container">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">MyWebsite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active text-light" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Card Grid -->
+  <div class="row mb-4">
+    <div class="col-md-4 mb-3" *ngFor="let card of cards">
+      <div class="card h-100 shadow-lg rounded">
+        <img [src]="card.img" class="card-img-top" [alt]="card.title">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+          <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form Component -->
+  <h2 class="text-center mb-4">Angular SPA — Contact Form</h2>
+  <app-contact></app-contact>
+
+</div>
