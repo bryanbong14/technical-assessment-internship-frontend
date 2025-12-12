@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Assessment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Welcome to the Frontend Assessment</h1>
+        <!-- TODO: Implement Task 1 here -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4 shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">MyWebsite</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active text-light" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- TODO: Implement Task 2 here -->
+        <div class="row mb-4">
+
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow rounded">
+                    <img src="https://picsum.photos/id/1011/300/180" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card One</h5>
+                        <p class="card-text">Short description for card one.</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow rounded">
+                    <img src="https://picsum.photos/id/1012/300/180" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card Two</h5>
+                        <p class="card-text">Short description for card two.</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow rounded">
+                    <img src="https://picsum.photos/id/1013/300/180" class="card-img-top" alt="">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Card Three</h5>
+                        <p class="card-text">Short description for card three.</p>
+                        <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TODO: Implement Task 3 here -->
+        <div class="card shadow p-4">
+            <h3 class="text-center mb-4 text-primary">Contact Us</h3>
+
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+                    <label for="nameInput">Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                    <label for="emailInput">Email</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="messageInput" style="height:120px"
+                              placeholder="Your message"></textarea>
+                    <label for="messageInput">Message</label>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg w-100" id="submitBtn">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Task 4: Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content rounded shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Submitted Information</h5>
+                    <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Name:</strong> <span id="modalName"></span></p>
+                    <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+                    <p><strong>Message:</strong> <span id="modalMessage"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('emailInput').value;
+            const message = document.getElementById('messageInput').value;
+
+            document.getElementById('modalName').textContent = name;
+            document.getElementById('modalEmail').textContent = email;
+            document.getElementById('modalMessage').textContent = message;
+
+            const modal = new bootstrap.Modal(document.getElementById('contactModal'));
+            modal.show();
+        });
+    </script>
+</body>
+
+</html>
